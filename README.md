@@ -1,177 +1,194 @@
-# ml-saas-churn-prediction
-# SaaS Customer Churn Prediction
+# 📊 Customer Retention Intelligence System (Churn Prediction + Decision Engine)
 
-## Project Overview
-Customer churn is one of the biggest challenges faced by Software-as-a-Service (SaaS) companies. Retaining existing customers is often more cost-effective than acquiring new ones.
+## 🚀 Project Overview
 
-This project builds a machine learning model to predict whether a customer is likely to churn based on behavioral and subscription data. The goal is to help businesses identify at-risk customers early and take proactive retention actions.
+This project goes beyond traditional churn prediction by building a **Customer Retention Intelligence System**.
 
-The project also demonstrates a full end-to-end data science workflow including data analysis, feature engineering, machine learning modeling, model evaluation, and deployment.
+Instead of only predicting churn, this system:
 
----
-
-## Business Problem
-
-In SaaS companies, churn occurs when a customer stops using a service or cancels their subscription. High churn rates can significantly impact revenue and growth.
-
-By predicting churn in advance, companies can:
-- Identify customers likely to leave
-- Offer targeted retention strategies
-- Improve product engagement
-- Reduce revenue loss
+* Identifies high-risk customers
+* Explains *why* customers churn
+* Segments customers into meaningful groups
+* Recommends retention strategies
+* Evaluates strategies using A/B testing
 
 ---
 
-## Project Objectives
+## 🎯 Problem Statement
 
-- Perform exploratory data analysis (EDA) on customer data
-- Identify key factors contributing to churn
-- Build machine learning models to predict churn
-- Evaluate model performance using appropriate metrics
-- Deploy the model as an interactive web application
+Customer churn is a major challenge for subscription-based businesses.
 
----
+Most solutions:
 
-## Dataset
+* Predict churn ❌
+* Stop there ❌
 
-The project uses a public SaaS churn dataset containing customer information such as:
+This project aims to:
 
-- Customer demographics
-- Subscription details
-- Product usage patterns
-- Support interaction history
-- Payment information
-
-Target variable:
-- **Churn** (1 = customer left, 0 = customer retained)
+> **Predict, understand, and reduce churn using data-driven strategies**
 
 ---
 
-## Tech Stack
+## 🧠 Key Features
 
-Programming Language:
-- Python
+### 1️⃣ Churn Prediction Model
 
-Data Analysis:
-- Pandas
-- NumPy
-
-Data Visualization:
-- Matplotlib
-- Seaborn
-
-Machine Learning:
-- Scikit-learn
-- XGBoost (optional)
-
-Model Explainability:
-- SHAP
-
-Deployment:
-- Streamlit
-
-Version Control:
-- Git & GitHub
+* Built using machine learning (Logistic Regression, Random Forest)
+* Focus on **recall** to capture maximum churn cases
+* Handles missing values, encoding, and preprocessing
 
 ---
 
-## Project Workflow
+### 2️⃣ Threshold Optimization (Advanced)
 
-1. Data Collection
-2. Data Cleaning and Preprocessing
-3. Exploratory Data Analysis (EDA)
-4. Feature Engineering
-5. Model Training
-6. Model Evaluation
-7. Model Interpretation
-8. Deployment with Streamlit
+* Default threshold (0.5) replaced with optimized threshold
+* Used **precision-recall tradeoff**
+* Improved detection of churn customers
 
----
+📌 Outcome:
 
-## Machine Learning Models
-
-The following models will be explored:
-
-- Logistic Regression
-- Decision Tree
-- Random Forest
-- Gradient Boosting / XGBoost
-
-Models will be compared using evaluation metrics to select the best performing model.
+* Better business decision-making
+* Reduced false negatives
 
 ---
 
-## Evaluation Metrics
+### 3️⃣ Explainable AI (SHAP)
 
-Since churn prediction is a classification problem, the following metrics will be used:
+* Used SHAP for model interpretability
+* Identified key churn drivers:
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC-AUC Score
-- Confusion Matrix
+  * Monthly Charges ↑ → higher churn
+  * Tenure ↓ → higher churn
 
-Special focus will be given to **Recall**, as identifying customers likely to churn is crucial for retention strategies.
+📌 Impact:
 
----
-
-## Expected Insights
-
-The analysis aims to uncover patterns such as:
-
-- How product usage affects churn
-- Relationship between subscription length and retention
-- Impact of customer support interactions
-- Key features that influence churn behavior
+* Model is no longer a black box
+* Provides actionable insights
 
 ---
 
-## Project Structure
-saas-churn-prediction-ml
+### 4️⃣ Customer Segmentation (KMeans)
 
-data/
-raw/
-processed/
+* Grouped customers into segments:
 
-notebooks/
-01_data_exploration.ipynb
-02_feature_engineering.ipynb
-03_model_training.ipynb
+  * High-value loyal customers
+  * High-risk churn customers
+  * Low-engagement users
 
-src/
-data_preprocessing.py
-feature_engineering.py
-train_model.py
-predict.py
+📌 Impact:
 
-models/
-churn_model.pkl
-
-app/
-streamlit_app.py
-
-README.md
-requirements.txt
-
-
+* Enables targeted strategies instead of generic solutions
 
 ---
 
-## Future Improvements
+### 5️⃣ Retention Strategy Engine (Business Layer)
 
-Possible extensions of the project include:
+* Rule-based system built on top of predictions
 
-- Handling class imbalance using SMOTE
-- Hyperparameter tuning using GridSearchCV
-- Customer segmentation using clustering
-- Building a recommendation system for retention
-- Deploying the model using cloud services
+Examples:
+
+* High risk → Offer discount
+* High charges → Provide cheaper plan
+* New customers → Onboarding support
+
+📌 Impact:
+
+* Converts predictions into **business actions**
 
 ---
 
-## Author
+### 6️⃣ A/B Testing Simulation (Advanced)
 
-Tanishka Pundhir
+* Simulated two strategies:
+
+  * Discount Offer
+  * Customer Support
+
+📊 Results:
+
+* Discount Offer → **69.36% retention**
+* Customer Support → **60.02% retention**
+
+📌 Insight:
+
+* Financial incentives outperform service-based interventions
+
+---
+
+### 7️⃣ Statistical Validation
+
+* Conducted hypothesis testing (T-test)
+* Verified statistical significance of results
+
+📌 Impact:
+
+* Ensures decisions are **data-backed, not random**
+
+---
+
+## 📊 Tech Stack
+
+* Python
+* Pandas, NumPy
+* Scikit-learn
+* SHAP
+* Matplotlib / Seaborn
+
+---
+
+## 📈 Key Insights
+
+* Customers with **high monthly charges and low tenure** are more likely to churn
+* **Discount-based strategies** significantly improve retention
+* Segmentation enables **personalized retention strategies**
+* Optimizing threshold improves business outcomes
+
+---
+
+## 🧠 Business Impact
+
+This system enables:
+
+* Early identification of churn risk
+* Data-driven retention strategies
+* Improved customer lifetime value (CLV)
+* Reduced revenue loss
+
+---
+
+## 🔥 What Makes This Project Unique
+
+Unlike typical churn projects, this includes:
+
+✅ Prediction
+✅ Explainability
+✅ Segmentation
+✅ Strategy Engine
+✅ A/B Testing
+✅ Statistical Validation
+
+👉 This makes it a **complete decision intelligence system**
+
+---
+
+## 🚀 Future Improvements
+
+* Real-time deployment using APIs
+* Integration with business dashboards
+* Personalized offer recommendation using ML
+* Time-series churn prediction
+
+---
+
+## 👤 Author
+
+**Tanishka Pundhir**
+B.Tech (Artificial Intelligence & Data Science)
+
+---
+
+## ⭐ Conclusion
+
+This project demonstrates how machine learning can move beyond prediction to **actionable business intelligence**, helping organizations not only understand churn but actively reduce it.
 
 
